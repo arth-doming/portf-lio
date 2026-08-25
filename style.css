@@ -235,6 +235,179 @@ header p {
     font-weight: 800;
 }
 
+/* Sobre Mim - Texto + Destaques */
+.about-content {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 10px 25px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.highlight-item:last-child {
+    border-bottom: none;
+}
+
+.highlight-item i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.highlight-item h4 {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.highlight-item p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Grade de Projetos */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--bg-surface-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-icon {
+    display: none;
+    font-size: 2.5rem;
+    color: var(--text-secondary);
+    opacity: 0.4;
+}
+
+.project-image.no-image .placeholder-icon {
+    display: block;
+}
+
+.project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.project-links {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 18px;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: var(--accent-color);
+}
+
 /* Grid de Habilidades Modernas */
 .skills-grid {
     display: grid;
@@ -435,7 +608,12 @@ footer p {
     .header-actions { justify-content: center; }
     .nav-links { display: none; }
     .avatar-wrapper { width: 260px; height: 260px; }
-    
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
     .contact-link {
         font-size: 1.1rem;
     }
