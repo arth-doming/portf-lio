@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arthur Domingues | Ciência da Computação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="scroll-progress"></div>
 
     <nav id="navbar">
         <div class="logo">ARTHUR<span> DOMINGUES</span></div>
@@ -22,11 +27,12 @@
     </nav>
 
     <header id="inicio">
+        <div class="hero-bg-pattern"></div>
         <div class="header-container">
             <div class="header-text">
                 <span class="badge">Disponível para Estágio</span>
                 <h1>Olá, eu sou o <span>Arthur</span></h1>
-                <h2>Estudante de Ciência da Computação</h2>
+                <h2>Estudante de <span id="typing-text">Ciência da Computação</span><span class="typing-cursor">|</span></h2>
                 <p>Desenvolvedor em formação com vivência internacional e paixão por construir softwares eficientes.</p>
                 <div class="header-actions">
                     <a href="#sobre" class="btn primary">Conhecer Perfil</a>
@@ -42,11 +48,11 @@
     </header>
 
     <section id="sobre" class="container">
-        <div class="section-title">
+        <div class="section-title reveal">
             <span>01. Histórico</span>
             <h2>Sobre Mim</h2>
         </div>
-        <div class="about-content">
+        <div class="about-content reveal">
             <div class="about-text">
                 <p>Estudante de Ciência da Computação apaixonado por transformar problemas complexos em software eficiente. Gosto de entender a fundo como as coisas funcionam &mdash; da lógica por trás de um algoritmo à arquitetura de um sistema completo &mdash; e de aplicar esse raciocínio na construção de soluções reais.</p>
                 <p>Minha trajetória é marcada por uma sólida bagagem internacional, com intercâmbios culturais e acadêmicos em <strong>Cape Town (África do Sul)</strong> e na <strong>Universidade de Jena (Alemanha)</strong>. Essas experiências consolidaram minha autonomia, resiliência, capacidade de comunicação multicultural e fluência avançada no idioma alemão &mdash; habilidades que levo para o trabalho em equipe e para a forma como encaro novos desafios técnicos.</p>
@@ -86,11 +92,11 @@
     </section>
 
     <section id="habilidades" class="container bg-dark-accent">
-        <div class="section-title">
+        <div class="section-title reveal">
             <span>02. Competências</span>
             <h2>Habilidades & Ferramentas</h2>
         </div>
-        <div class="skills-grid">
+        <div class="skills-grid reveal">
             <div class="skill-card">
                 <div class="card-icon"><i class="fa-solid fa-code"></i></div>
                 <h3>Linguagens</h3>
@@ -125,11 +131,11 @@
     </section>
 
     <section id="projetos" class="container bg-dark-accent">
-        <div class="section-title">
+        <div class="section-title reveal">
             <span>03. Portfólio</span>
             <h2>Meus Projetos</h2>
         </div>
-        <div class="projects-grid">
+        <div class="projects-grid reveal">
             <div class="project-card">
                 <div class="project-image">
                     <img src="images/projeto1.png" alt="Screenshot do Projeto 1" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
@@ -189,11 +195,11 @@
     </section>
 
     <section id="educacao" class="container">
-        <div class="section-title">
+        <div class="section-title reveal">
             <span>04. Trajetória</span>
             <h2>Educação e Experiência</h2>
         </div>
-        <div class="timeline">
+        <div class="timeline reveal">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2025 - Atual</div>
@@ -226,7 +232,7 @@
     </section>
 
     <footer id="contato">
-        <div class="footer-container">
+        <div class="footer-container reveal">
             <h2>Vamos construir algo juntos?</h2>
             <p>Estou ativamente buscando meu primeiro estágio na área de tecnologia para aplicar meus conhecimentos e evoluir tecnicamente.</p>
             
@@ -251,6 +257,10 @@
             <p class="copyright">&copy; 2026 Arthur Domingues. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <button id="back-to-top" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

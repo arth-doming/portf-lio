@@ -1,3 +1,84 @@
+// Barra de progresso de scroll + botão de voltar ao topo
+const scrollProgress = document.getElementById('scroll-progress');
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (scrollProgress) scrollProgress.style.width = progress + '%';
+
+    if (backToTopBtn) {
+        backToTopBtn.classList.toggle('is-visible', scrollTop > 400);
+    }
+});
+
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Animação de revelação ao rolar (fade + slide up)
+const revealElements = document.querySelectorAll('.reveal');
+
+if (revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// Efeito de digitação no subtítulo do Hero
+const typingEl = document.getElementById('typing-text');
+
+if (typingEl) {
+    const phrases = [
+        'Ciência da Computação',
+        'Desenvolvedor Mobile',
+        'Entusiasta de Unity & Games',
+        'Apaixonado por Software'
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = phrases[0].length;
+    let isDeleting = false;
+
+    function typeLoop() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            charIndex--;
+        } else {
+            charIndex++;
+        }
+
+        typingEl.textContent = currentPhrase.substring(0, charIndex);
+
+        let delay = isDeleting ? 40 : 80;
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            delay = 1800; // pausa no final da frase
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            delay = 400;
+        }
+
+        setTimeout(typeLoop, delay);
+    }
+
+    setTimeout(typeLoop, 2000); // pausa inicial antes de começar a apagar
+}
+
 // Gerencia efeitos ao rolar a página
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
