@@ -339,6 +339,33 @@ header p {
     object-fit: cover;
 }
 
+.project-cover {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.project-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-video {
+    opacity: 1;
+}
+
+.project-card:hover .project-cover {
+    opacity: 0;
+}
+
 .placeholder-icon {
     display: none;
     font-size: 2.5rem;

@@ -14,6 +14,30 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Toca o vídeo do projeto ao passar o mouse por cima do card
+document.querySelectorAll('.project-card').forEach(card => {
+    const video = card.querySelector('.project-video');
+    if (!video) return;
+
+    const src = video.getAttribute('data-src');
+
+    card.addEventListener('mouseenter', () => {
+        // Carrega o vídeo só na primeira vez que o mouse passa (economiza dados)
+        if (src && !video.getAttribute('src')) {
+            video.setAttribute('src', src);
+        }
+        video.currentTime = 0;
+        video.play().catch(() => {
+            // Ignora erro caso o navegador bloqueie o autoplay
+        });
+    });
+
+    card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+    });
+});
+
 // Rolagem suave inteligente para os links internos do menu
 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
