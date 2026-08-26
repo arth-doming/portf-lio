@@ -618,6 +618,13 @@ footer p {
     margin-bottom: 40px;
 }
 
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
 /* NOVO: Alinhamento flex para o link de email e ícone */
 .contact-link {
     display: inline-flex;
