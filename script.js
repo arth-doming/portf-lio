@@ -39,17 +39,24 @@ if (revealElements.length) {
 // Efeito de digitação no subtítulo do Hero
 const typingEl = document.getElementById('typing-text');
 
+let resetTyping = () => {};
+
 if (typingEl) {
-    const phrases = [
-        'Ciência da Computação',
-        'Desenvolvedor Mobile',
-        'Entusiasta de Unity & Games',
-        'Apaixonado por Software'
-    ];
+    // As frases de cada idioma ficam em translations.js
+    let phrases = typingPhrases.pt;
 
     let phraseIndex = 0;
     let charIndex = phrases[0].length;
     let isDeleting = false;
+
+    // Recomeça a digitação com as frases do idioma escolhido
+    resetTyping = (lang) => {
+        phrases = typingPhrases[lang] || typingPhrases.pt;
+        phraseIndex = 0;
+        charIndex = phrases[0].length;
+        isDeleting = false;
+        typingEl.textContent = phrases[0];
+    };
 
     function typeLoop() {
         const currentPhrase = phrases[phraseIndex];
@@ -64,10 +71,10 @@ if (typingEl) {
 
         let delay = isDeleting ? 40 : 80;
 
-        if (!isDeleting && charIndex === currentPhrase.length) {
+        if (!isDeleting && charIndex >= currentPhrase.length) {
             delay = 1800; // pausa no final da frase
             isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
+        } else if (isDeleting && charIndex <= 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
             delay = 400;
@@ -138,7 +145,8 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
-// Menu de download do currículo (Português / English)
+
+// Menu de download do currículo (Português / English / Deutsch)
 const cvDropdown = document.querySelector('.cv-dropdown');
 
 if (cvDropdown) {
@@ -170,3 +178,48 @@ if (cvDropdown) {
         }
     });
 }
+
+// Troca de idioma (Português / English)
+// O português fica no próprio HTML; o inglês vem de translations.js
+const langButtons = document.querySelectorAll('.lang-switch button');
+const i18nTexts = document.querySelectorAll('[data-i18n]');
+const i18nAlts = document.querySelectorAll('[data-i18n-alt]');
+const i18nArias = document.querySelectorAll('[data-i18n-aria]');
+
+// Guarda os textos originais em português para poder voltar a eles
+i18nTexts.forEach(el => { el.dataset.i18nPt = el.innerHTML; });
+i18nAlts.forEach(el => { el.dataset.i18nPtAlt = el.getAttribute('alt'); });
+i18nArias.forEach(el => { el.dataset.i18nPtAria = el.getAttribute('aria-label'); });
+
+function setLanguage(lang) {
+    const dict = translations[lang] || {};
+    const pick = (key, ptValue) => (lang !== 'pt' && key in dict ? dict[key] : ptValue);
+
+    i18nTexts.forEach(el => {
+        el.innerHTML = pick(el.dataset.i18n, el.dataset.i18nPt);
+    });
+    i18nAlts.forEach(el => {
+        el.setAttribute('alt', pick(el.dataset.i18nAlt, el.dataset.i18nPtAlt));
+    });
+    i18nArias.forEach(el => {
+        el.setAttribute('aria-label', pick(el.dataset.i18nAria, el.dataset.i18nPtAria));
+    });
+
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+    langButtons.forEach(btn => {
+        btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
+    });
+    resetTyping(lang);
+
+    try { localStorage.setItem('lang', lang); } catch (e) { /* navegador bloqueou o armazenamento */ }
+}
+
+langButtons.forEach(btn => {
+    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+});
+
+// Idioma inicial: o último escolhido; se for a primeira visita, segue o idioma do navegador
+let savedLang = null;
+try { savedLang = localStorage.getItem('lang'); } catch (e) { /* ignora */ }
+const initialLang = savedLang || ((navigator.language || 'pt').toLowerCase().startsWith('pt') ? 'pt' : 'en');
+if (initialLang !== 'pt') setLanguage(initialLang);

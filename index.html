@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Domingues | Ciência da Computação</title>
+    <title data-i18n="meta.title">Arthur Domingues | Ciência da Computação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,32 +16,38 @@
 
     <nav id="navbar">
         <div class="logo">ARTHUR<span> DOMINGUES</span></div>
-        <ul class="nav-links">
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#educacao">Educação</a></li>
-            <li><a href="#contato" class="nav-btn">Contato</a></li>
-        </ul>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#inicio" data-i18n="nav.home">Início</a></li>
+                <li><a href="#sobre" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#habilidades" data-i18n="nav.skills">Habilidades</a></li>
+                <li><a href="#projetos" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#educacao" data-i18n="nav.education">Educação</a></li>
+                <li><a href="#contato" class="nav-btn" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="lang-switch" role="group" aria-label="Idioma / Language">
+                <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </div>
     </nav>
 
     <header id="inicio">
         <div class="hero-bg-pattern"></div>
         <div class="header-container">
             <div class="header-text">
-                <span class="badge">Disponível para Estágio</span>
-                <h1>Olá, eu sou o <span>Arthur</span></h1>
-                <h2>Estudante de <span id="typing-text">Ciência da Computação</span><span class="typing-cursor">|</span></h2>
-                <p>Desenvolvedor em formação com vivência internacional e paixão por construir softwares eficientes.</p>
+                <span class="badge" data-i18n="hero.badge">Disponível para Estágio</span>
+                <h1 data-i18n="hero.title">Olá, eu sou o <span>Arthur</span></h1>
+                <h2><span data-i18n="hero.rolePrefix">Estudante de </span><span id="typing-text">Ciência da Computação</span><span class="typing-cursor">|</span></h2>
+                <p data-i18n="hero.text">Desenvolvedor em formação com vivência internacional e paixão por construir softwares eficientes.</p>
                 <div class="header-actions">
-                    <a href="#sobre" class="btn primary">Conhecer Perfil</a>
-                    <a href="#contato" class="btn secondary">Vamos Conversar</a>
+                    <a href="#sobre" class="btn primary" data-i18n="hero.cta1">Conhecer Perfil</a>
+                    <a href="#contato" class="btn secondary" data-i18n="hero.cta2">Vamos Conversar</a>
                 </div>
             </div>
             <div class="header-image">
                 <div class="avatar-wrapper">
-                    <img src="images/perfil.png" alt="Foto de Perfil de Arthur Domingues" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500';">
+                    <img src="images/perfil.png" alt="Foto de Perfil de Arthur Domingues" data-i18n-alt="hero.photoAlt" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=500';">
                 </div>
             </div>
         </div>
@@ -49,42 +55,42 @@
 
     <section id="sobre" class="container">
         <div class="section-title reveal">
-            <span>01. Histórico</span>
-            <h2>Sobre Mim</h2>
+            <span data-i18n="about.label">01. Histórico</span>
+            <h2 data-i18n="about.title">Sobre Mim</h2>
         </div>
         <div class="about-content reveal">
             <div class="about-text">
-                <p>Estudante de Ciência da Computação apaixonado por transformar problemas complexos em software eficiente. Gosto de entender a fundo como as coisas funcionam &mdash; da lógica por trás de um algoritmo à arquitetura de um sistema completo &mdash; e de aplicar esse raciocínio na construção de soluções reais.</p>
-                <p>Minha trajetória é marcada por uma sólida bagagem internacional, com intercâmbios culturais e acadêmicos em <strong>Cape Town (África do Sul)</strong> e na <strong>Universidade de Jena (Alemanha)</strong>. Essas experiências consolidaram minha autonomia, resiliência, capacidade de comunicação multicultural e fluência avançada no idioma alemão &mdash; habilidades que levo para o trabalho em equipe e para a forma como encaro novos desafios técnicos.</p>
-                <p>Hoje, meu foco é aprofundar conhecimentos em desenvolvimento de software e engenharia, unindo a base teórica da graduação com projetos práticos que me ajudam a crescer tecnicamente todos os dias.</p>
+                <p data-i18n="about.p1">Estudante de Ciência da Computação apaixonado por transformar problemas complexos em software eficiente. Gosto de entender a fundo como as coisas funcionam &mdash; da lógica por trás de um algoritmo à arquitetura de um sistema completo &mdash; e de aplicar esse raciocínio na construção de soluções reais.</p>
+                <p data-i18n="about.p2">Minha trajetória é marcada por uma sólida bagagem internacional, com intercâmbios culturais e acadêmicos em <strong>Cape Town (África do Sul)</strong> e na <strong>Universidade de Jena (Alemanha)</strong>. Essas experiências consolidaram minha autonomia, resiliência, capacidade de comunicação multicultural e fluência avançada no idioma alemão &mdash; habilidades que levo para o trabalho em equipe e para a forma como encaro novos desafios técnicos.</p>
+                <p data-i18n="about.p3">Hoje, meu foco é aprofundar conhecimentos em desenvolvimento de software e engenharia, unindo a base teórica da graduação com projetos práticos que me ajudam a crescer tecnicamente todos os dias.</p>
             </div>
             <div class="about-highlights">
                 <div class="highlight-item">
                     <i class="fa-solid fa-location-dot"></i>
                     <div>
-                        <h4>Localização</h4>
-                        <p>Curitiba, PR &mdash; Brasil</p>
+                        <h4 data-i18n="about.location">Localização</h4>
+                        <p data-i18n="about.locationValue">Curitiba, PR &mdash; Brasil</p>
                     </div>
                 </div>
                 <div class="highlight-item">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <div>
-                        <h4>Formação</h4>
-                        <p>Ciência da Computação &mdash; PUC-PR</p>
+                        <h4 data-i18n="about.education">Formação</h4>
+                        <p data-i18n="about.educationValue">Ciência da Computação &mdash; PUC-PR</p>
                     </div>
                 </div>
                 <div class="highlight-item">
                     <i class="fa-solid fa-language"></i>
                     <div>
-                        <h4>Idiomas</h4>
-                        <p>Português, Alemão (B2) e Inglês</p>
+                        <h4 data-i18n="about.languages">Idiomas</h4>
+                        <p data-i18n="about.languagesValue">Português, Alemão (B2) e Inglês</p>
                     </div>
                 </div>
                 <div class="highlight-item">
                     <i class="fa-solid fa-briefcase"></i>
                     <div>
-                        <h4>Disponibilidade</h4>
-                        <p>Estágio em Tecnologia</p>
+                        <h4 data-i18n="about.availability">Disponibilidade</h4>
+                        <p data-i18n="about.availabilityValue">Estágio em Tecnologia</p>
                     </div>
                 </div>
             </div>
@@ -93,13 +99,13 @@
 
     <section id="habilidades" class="container bg-dark-accent">
         <div class="section-title reveal">
-            <span>02. Competências</span>
-            <h2>Habilidades & Ferramentas</h2>
+            <span data-i18n="skills.label">02. Competências</span>
+            <h2 data-i18n="skills.title">Habilidades & Ferramentas</h2>
         </div>
         <div class="skills-grid reveal">
             <div class="skill-card">
                 <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Linguagens</h3>
+                <h3 data-i18n="skills.languages">Linguagens</h3>
                 <ul>
                     <li>Python & SQL</li>
                     <li>C / C++ & C#</li>
@@ -109,22 +115,22 @@
             </div>
             <div class="skill-card">
                 <div class="card-icon"><i class="fa-solid fa-terminal"></i></div>
-                <h3>Ferramentas</h3>
+                <h3 data-i18n="skills.tools">Ferramentas</h3>
                 <ul>
                     <li>Git & GitHub</li>
                     <li>VS Code</li>
                     <li>IntelliJ IDEA</li>
-                    <li>Ambientes Linux / Windows</li>
+                    <li data-i18n="skills.os">Ambientes Linux / Windows</li>
                 </ul>
             </div>
             <div class="skill-card">
                 <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
-                <h3>Idiomas & Soft Skills</h3>
+                <h3 data-i18n="skills.soft">Idiomas & Soft Skills</h3>
                 <ul>
-                    <li>Alemão Avançado (B2 Goethe)</li>
-                    <li>Inglês Intermediário</li>
-                    <li>Resolução de Problemas Complexos</li>
-                    <li>Trabalho em Equipe e Lógica</li>
+                    <li data-i18n="skills.german">Alemão Avançado (B2 Goethe)</li>
+                    <li data-i18n="skills.english">Inglês Intermediário</li>
+                    <li data-i18n="skills.problemSolving">Resolução de Problemas Complexos</li>
+                    <li data-i18n="skills.teamwork">Trabalho em Equipe e Lógica</li>
                 </ul>
             </div>
         </div>
@@ -132,38 +138,38 @@
 
     <section id="projetos" class="container bg-dark-accent">
         <div class="section-title reveal">
-            <span>03. Portfólio</span>
-            <h2>Meus Projetos</h2>
+            <span data-i18n="projects.label">03. Portfólio</span>
+            <h2 data-i18n="projects.title">Meus Projetos</h2>
         </div>
         <div class="projects-grid reveal">
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/projeto1.png" alt="Screenshot do Projeto 1" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
+                    <img src="images/projeto1.png" alt="Screenshot do Projeto 1" data-i18n-alt="projects.p1.alt" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
                     <video class="project-video" muted loop playsinline preload="none" data-src="videos/projeto1.mp4"></video>
                     <i class="fa-solid fa-folder-open placeholder-icon"></i>
                 </div>
                 <div class="project-content">
-                    <h3>Jogo 2D Unity</h3>
-                    <p>Shadow of the Raven é um jogo 2D desenvolvido na Unity como projeto de TCC do Curso Técnico em Desenvolvimento de Sistemas.</p>
+                    <h3 data-i18n="projects.p1.title">Jogo 2D Unity</h3>
+                    <p data-i18n="projects.p1.desc">Shadow of the Raven é um jogo 2D desenvolvido na Unity como projeto de TCC do Curso Técnico em Desenvolvimento de Sistemas.</p>
                     <div class="project-tags">
                         <span>C#</span>
                         <span>Unity</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/arth-doming/shadow-of-the-raven-unity-TCC-senai" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
-                        <a href="downloads/Jogo_windows.zip" download><i class="fa-solid fa-download"></i> Baixar Jogo</a>
+                        <a href="downloads/Jogo_windows.zip" download><i class="fa-solid fa-download"></i> <span data-i18n="projects.downloadGame">Baixar Jogo</span></a>
                     </div>
                 </div>
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/projeto2.png" alt="Screenshot do Projeto 2" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
+                    <img src="images/projeto2.png" alt="Screenshot do Projeto 2" data-i18n-alt="projects.p2.alt" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
                     <video class="project-video" muted loop playsinline preload="none" data-src="videos/projeto2.mp4"></video>
                     <i class="fa-solid fa-folder-open placeholder-icon"></i>
                 </div>
                 <div class="project-content">
-                    <h3>Nexo — Agenda para Psicólogos</h3>
-                    <p>Aplicativo mobile desenvolvido em Flutter com backend Firebase, voltado para psicólogos que precisam organizar sua rotina clínica de forma segura e eficiente.</p>
+                    <h3 data-i18n="projects.p2.title">Nexo — Agenda para Psicólogos</h3>
+                    <p data-i18n="projects.p2.desc">Aplicativo mobile desenvolvido em Flutter com backend Firebase, voltado para psicólogos que precisam organizar sua rotina clínica de forma segura e eficiente.</p>
                     <div class="project-tags">
                         <span>Flutter</span>
                         <span>Firebase</span>
@@ -176,16 +182,16 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/projeto3.png" alt="Screenshot do Projeto 3" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
+                    <img src="images/projeto3.png" alt="Screenshot do Projeto 3" data-i18n-alt="projects.p3.alt" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
                     <video class="project-video" muted loop playsinline preload="none" data-src="videos/projeto3.mp4"></video>
                     <i class="fa-solid fa-folder-open placeholder-icon"></i>
                 </div>
                 <div class="project-content">
-                    <h3>Desenvolvimento de uma CPU</h3>
-                    <p>projeto acadêmico de uma CPU virtual, capaz de executar instruções em baixo nível a partir de arquivos binários.</p>
+                    <h3 data-i18n="projects.p3.title">Desenvolvimento de uma CPU</h3>
+                    <p data-i18n="projects.p3.desc">projeto acadêmico de uma CPU virtual, capaz de executar instruções em baixo nível a partir de arquivos binários.</p>
                     <div class="project-tags">
                         <span>Python</span>
-                        <span>Arquitetura de Computadores</span>
+                        <span data-i18n="projects.tagArch">Arquitetura de Computadores</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/arth-doming/Projeto-CPU" target="_blank"><i class="fa-brands fa-github"></i> Código</a>
@@ -194,20 +200,20 @@
             </div>
             <div class="project-card">
                 <div class="project-image">
-                    <img src="images/projeto4.png" alt="Screenshot do Galaga em Scratch" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
+                    <img src="images/projeto4.png" alt="Screenshot do Galaga em Scratch" data-i18n-alt="projects.p4.alt" class="project-cover" onerror="this.parentElement.classList.add('no-image'); this.remove();">
                     <video class="project-video" muted loop playsinline preload="none" data-src="videos/projeto4.mp4"></video>
                     <i class="fa-solid fa-folder-open placeholder-icon"></i>
                 </div>
                 <div class="project-content">
-                    <h3>Galaga em Scratch</h3>
-                    <p>Minha versão do clássico de fliperama, desenvolvida como atividade final do curso de Fundamentos de Lógica de Programação do processo seletivo da Apple Developer Academy.</p>
+                    <h3 data-i18n="projects.p4.title">Galaga em Scratch</h3>
+                    <p data-i18n="projects.p4.desc">Minha versão do clássico de fliperama, desenvolvida como atividade final do curso de Fundamentos de Lógica de Programação do processo seletivo da Apple Developer Academy.</p>
                     <div class="project-tags">
                         <span>Scratch</span>
-                        <span>Lógica de Programação</span>
-                        <span>Clones & Eventos</span>
+                        <span data-i18n="projects.tagLogic">Lógica de Programação</span>
+                        <span data-i18n="projects.tagClones">Clones & Eventos</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://scratch.mit.edu/projects/1385837310" target="_blank"><i class="fa-solid fa-gamepad"></i> Jogar no Scratch</a>
+                        <a href="https://scratch.mit.edu/projects/1385837310" target="_blank"><i class="fa-solid fa-gamepad"></i> <span data-i18n="projects.playScratch">Jogar no Scratch</span></a>
                     </div>
                 </div>
             </div>
@@ -216,45 +222,45 @@
 
     <section id="educacao" class="container">
         <div class="section-title reveal">
-            <span>04. Trajetória</span>
-            <h2>Educação e Experiência</h2>
+            <span data-i18n="edu.label">04. Trajetória</span>
+            <h2 data-i18n="edu.title">Educação e Experiência</h2>
         </div>
         <div class="timeline reveal">
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2025 - Atual</div>
-                <h3>Bacharelado em Ciência da Computação</h3>
+                <div class="timeline-date" data-i18n="edu.e1.date">2025 - Atual</div>
+                <h3 data-i18n="edu.e1.title">Bacharelado em Ciência da Computação</h3>
                 <h4>PUC-PR</h4>
-                <p>Desenvolvimento de fundamentos sólidos em algoritmos, estrutura de dados e engenharia de software.</p>
+                <p data-i18n="edu.e1.desc">Desenvolvimento de fundamentos sólidos em algoritmos, estrutura de dados e engenharia de software.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2024 - 2026</div>
-                <h3>Técnico em Desenvolvimento de Sistemas</h3>
+                <h3 data-i18n="edu.e2.title">Técnico em Desenvolvimento de Sistemas</h3>
                 <h4>Sistema Fiep / Senai-PR</h4>
-                <p>Foco prático em desenvolvimento de aplicações, modelagem de banco de dados e arquitetura de sistemas.</p>
+                <p data-i18n="edu.e2.desc">Foco prático em desenvolvimento de aplicações, modelagem de banco de dados e arquitetura de sistemas.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2024</div>
-                <h3>Vivência Universitária Internacional</h3>
-                <h4>Friedrich-Schiller-Universität (Jena, Alemanha)</h4>
-                <p>Estudo imersivo e contato com a cultura acadêmica e tecnológica alemã através do Goethe-Institut.</p>
+                <h3 data-i18n="edu.e3.title">Vivência Universitária Internacional</h3>
+                <h4 data-i18n="edu.e3.place">Friedrich-Schiller-Universität (Jena, Alemanha)</h4>
+                <p data-i18n="edu.e3.desc">Estudo imersivo e contato com a cultura acadêmica e tecnológica alemã através do Goethe-Institut.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-date">2024</div>
-                <h3>Intercâmbio de Idiomas e Cultura</h3>
-                <h4>LAL School (Cape Town, África do Sul)</h4>
-                <p>Desenvolvimento intensivo de conversação em inglês e adaptabilidade cultural.</p>
+                <h3 data-i18n="edu.e4.title">Intercâmbio de Idiomas e Cultura</h3>
+                <h4 data-i18n="edu.e4.place">LAL School (Cape Town, África do Sul)</h4>
+                <p data-i18n="edu.e4.desc">Desenvolvimento intensivo de conversação em inglês e adaptabilidade cultural.</p>
             </div>
         </div>
     </section>
 
     <footer id="contato">
         <div class="footer-container reveal">
-            <h2>Vamos construir algo juntos?</h2>
-            <p>Estou ativamente buscando meu primeiro estágio na área de tecnologia para aplicar meus conhecimentos e evoluir tecnicamente.</p>
+            <h2 data-i18n="footer.title">Vamos construir algo juntos?</h2>
+            <p data-i18n="footer.text">Estou ativamente buscando meu primeiro estágio na área de tecnologia para aplicar meus conhecimentos e evoluir tecnicamente.</p>
             
             <div class="contact-channels">
                 <a href="mailto:domingues.arthurusa@gmail.com" class="contact-link">
@@ -274,7 +280,7 @@
                 </a>
                 <div class="cv-dropdown">
                     <button type="button" class="cv-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="cv-menu">
-                        <i class="fa-solid fa-file-arrow-down"></i> Currículo
+                        <i class="fa-solid fa-file-arrow-down"></i> <span data-i18n="footer.cv">Currículo</span>
                         <i class="fa-solid fa-chevron-up cv-chevron"></i>
                     </button>
                     <div class="cv-menu" id="cv-menu" role="menu">
@@ -291,14 +297,15 @@
                 </div>
             </div>
             
-            <p class="copyright">&copy; 2026 Arthur Domingues. Todos os direitos reservados.</p>
+            <p class="copyright">&copy; 2026 Arthur Domingues. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
         </div>
     </footer>
 
-    <button id="back-to-top" aria-label="Voltar ao topo">
+    <button id="back-to-top" aria-label="Voltar ao topo" data-i18n-aria="backToTop">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
