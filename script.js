@@ -138,3 +138,35 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         }
     });
 });
+// Menu de download do currículo (Português / English)
+const cvDropdown = document.querySelector('.cv-dropdown');
+
+if (cvDropdown) {
+    const cvToggle = cvDropdown.querySelector('.cv-toggle');
+
+    const setCvMenu = (open) => {
+        cvDropdown.classList.toggle('open', open);
+        cvToggle.setAttribute('aria-expanded', open);
+    };
+
+    cvToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setCvMenu(!cvDropdown.classList.contains('open'));
+    });
+
+    // Fecha ao escolher um idioma, clicar fora ou apertar Esc
+    cvDropdown.querySelectorAll('.cv-menu a').forEach(link => {
+        link.addEventListener('click', () => setCvMenu(false));
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!cvDropdown.contains(e.target)) setCvMenu(false);
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cvDropdown.classList.contains('open')) {
+            setCvMenu(false);
+            cvToggle.focus();
+        }
+    });
+}

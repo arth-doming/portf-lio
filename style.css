@@ -652,7 +652,8 @@ footer p {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    flex-wrap: wrap;
+    gap: 20px 30px;
     margin-bottom: 40px;
 }
 
@@ -673,6 +674,95 @@ footer p {
 
 .social-links a:hover {
     color: var(--accent-color);
+}
+
+/* Menu de download do currículo (PT / EN) */
+.cv-dropdown {
+    position: relative;
+    display: inline-flex;
+}
+
+.cv-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.cv-toggle i:first-child {
+    font-size: 1.3rem;
+}
+
+.cv-chevron {
+    font-size: 0.75rem;
+    transition: transform 0.3s;
+}
+
+.cv-toggle:hover,
+.cv-dropdown.open .cv-toggle {
+    color: var(--accent-color);
+}
+
+.cv-dropdown.open .cv-chevron {
+    transform: rotate(180deg);
+}
+
+.cv-menu {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    min-width: 170px;
+    padding: 6px;
+    background: var(--bg-surface-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 10;
+}
+
+.cv-dropdown.open .cv-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.social-links .cv-menu a {
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.social-links .cv-menu a:hover,
+.social-links .cv-menu a:focus-visible {
+    background: var(--bg-surface);
+    color: var(--accent-color);
+    outline: none;
+}
+
+.cv-lang {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--accent-gradient);
+    color: #fff;
 }
 
 .copyright {

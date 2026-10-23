@@ -257,8 +257,8 @@
             <p>Estou ativamente buscando meu primeiro estágio na área de tecnologia para aplicar meus conhecimentos e evoluir tecnicamente.</p>
             
             <div class="contact-channels">
-                <a href="mailto:domingues.athurusa@gmail.com" class="contact-link">
-                    <i class="fa-regular fa-envelope"></i> domingues.athurusa@gmail.com
+                <a href="mailto:domingues.arthurusa@gmail.com" class="contact-link">
+                    <i class="fa-regular fa-envelope"></i> domingues.arthurusa@gmail.com
                 </a>
             </div>
             
@@ -272,9 +272,23 @@
                 <a href="https://www.instagram.com/arth_domingues/" target="_blank">
                     <i class="fa-brands fa-instagram"></i> Instagram
                 </a>
-                <a href="documents/curriculo-arthur-domingues.pdf" download>
-                    <i class="fa-solid fa-file-arrow-down"></i> Currículo
-                </a>
+                <div class="cv-dropdown">
+                    <button type="button" class="cv-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="cv-menu">
+                        <i class="fa-solid fa-file-arrow-down"></i> Currículo
+                        <i class="fa-solid fa-chevron-up cv-chevron"></i>
+                    </button>
+                    <div class="cv-menu" id="cv-menu" role="menu">
+                        <a href="documents/curriculo-arthur-domingues.pdf" download role="menuitem">
+                            <span class="cv-lang">PT</span> Português
+                        </a>
+                        <a href="documents/resume-arthur-domingues-en.pdf" download role="menuitem">
+                            <span class="cv-lang">EN</span> English
+                        </a>
+                        <a href="documents/lebenslauf-arthur-domingues-de.pdf" download role="menuitem">
+                            <span class="cv-lang">DE</span> Deutsch
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <p class="copyright">&copy; 2026 Arthur Domingues. Todos os direitos reservados.</p>
